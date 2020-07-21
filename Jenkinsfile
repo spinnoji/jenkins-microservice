@@ -1,8 +1,23 @@
-node {
+agent {docker {image 'maven:3.6.3'}} 
+stages{
 	stage('Build') {
-		echo "Build"
-	}
-	stage('Test') {
-		echo "Test"
-	}
+		steps{
+       sh 'mvn --version'
+         echo "build"
+                     }}
+
+
+ 	
+	 stage('Test') {
+                steps{
+      echo "Test"
+        }}
+
+
+ stage('Iintegraton test') {
+                steps{
+       echo "Integration test"
+                     }
+}
+}
 }
